@@ -1,0 +1,17 @@
+Close button script
+
+local closeButton = script.Parent
+
+local guiScreen = closeButton.Parent
+
+if closeButton and closeButton:IsA("TextButton") then
+	closeButton.MouseButton1Click:Connect(function()
+		if guiScreen and guiScreen:IsA("Frame") then
+			guiScreen.Visible = false
+		else
+			warn("Parent of the button is not a frame!")
+		end
+	end)
+else
+	warn("Script is not inside a text button!")
+end
