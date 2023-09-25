@@ -1,0 +1,13 @@
+Open button script
+
+
+local button = script.Parent.Parent:FindFirstChild("openButton")
+local gui = script.Parent.Parent:FindFirstChild("guiScreen")
+
+if button and gui then
+	button.MouseButton1Click:Connect(function()
+		gui.Visible = not gui.Visible
+	end)
+else
+	print("button or gui not found")
+end
