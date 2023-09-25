@@ -1,0 +1,17 @@
+local claimButton = script.Parent
+
+-- assuming "claim failed" is a direct parent of the "close button"
+local claimFailedText = claimButton:FindFirstChild("claimFailed")
+
+if not claimFailedText then
+	warn("Claim Failed text not found")
+	return
+end
+
+claimFailedText.Visible = false
+
+claimButton.MouseButton1Click:Connect(function()
+	claimFailedText.Visible = true
+	wait(5)
+	claimFailedText.Visible = false
+end)
